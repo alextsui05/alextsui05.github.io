@@ -1,11 +1,11 @@
 baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
-url: "http://atsui.me" # the base hostname & protocol for your site
-title: "atsui"
+url: "http://alextsui05.github.io" # the base hostname & protocol for your site
+title: "alextsui05.github.io"
 paginate: 3
 
 # This is used by feed.xml. Uncomment if you want to use it.
 # description: "..."
-description:         'Computer science grad student at UC Davis, writes C++, enjoys learning languages, and occasionally video games.'
+description:         'CS grad @ UC Davis who wishes to have nice things in C++, Python, Bash, C# and so, writes them.'
 
 gems:
   - jemoji
