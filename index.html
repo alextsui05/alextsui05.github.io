@@ -1,0 +1,63 @@
+---
+{% for post in site.posts limit:site.data.theme.num_home_posts %}
+---
+
+{% for post in paginator.posts %}
+<div class="post-header-home">
+  <h1 class="post-title-home">
+    <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
+  </h1>
+  {% include post-header-home.html %}
+</div>
+<div class="post-excerpt-home">
+  {{ post.content }}
+  <!--p class="text-right"><a href="{{ post.url | prepend:site.baseurl }}">Continue Reading &rarr;</a></p-->
+</div>
+{% endfor %}
+
+<!--div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+</div>
+<div class="pagination text-right">
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer text-right" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer text-right" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer text-right">Newer</span>
+  {% endif %}
+</div-->
+<div class="post-navs row">
+  {% if paginator.next_page %}
+    <div class="col-md-6 post-nav">
+      <h3 class="section-header">
+        <a href="{{ site.baseurl }}page{{paginator.next_page}}">&larr; Older</a>
+      </h3>
+    </div>
+  {% else %}
+    <div class="col-md-6 post-nav">
+      <h3 class="section-header">&larr; Older</h3>
+    </div>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+    <div class="col-md-6 post-nav">
+      <h3 class="section-header"><a href="{{ '/' | prepend:site.baseurl }}">Newer &rarr;</a></h3>
+    </div>
+    {% else %}
+    <div class="col-md-6 post-nav">
+      <h3 class="section-header"><a href="{{ site.baseurl }}page{{ paginator.previous_page }}">Newer &rarr;</a></h3>
+    </div>
+    {% endif %}
+  {% else %}
+    <div class="col-md-6 post-nav">
+      <h3 class="section-header">Newer &rarr;</h3>
+    </div>
+  {% endif %}
+</div>
