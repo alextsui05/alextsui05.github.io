@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>alextsui05.github.io</title>
+    <description>CS grad @ UC Davis who wishes to have nice things in C++, Python, Bash, C# and so, writes them.</description>
+    <link>http://alextsui05.github.io/</link>
+    <atom:link href="http://alextsui05.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 11 Jan 2015 17:14:24 -0800</pubDate>
+    <lastBuildDate>Sun, 11 Jan 2015 17:14:24 -0800</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Weekly Update 9</title>
+        <description>&lt;p&gt;Made a baby step with VimAddin. Basically, the issue I discovered a few months back that prevented you from effectively scrolling down in VimAddin had to do with conflicting keybindings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;public/img/md-debugger-keybindings.png&quot; alt=&quot;Bad keybindings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To perform these debugger actions, the user would hit Control+D first, followed by the second key. This broke the only way VimAddin had to scroll down and made it impossible for me to use.&lt;/p&gt;
+
+&lt;p&gt;Now that I know this, the workaround is to unbind/rebind the conflicting key bindings using Control+D or Control+F.&lt;/p&gt;
+
+&lt;p&gt;The solution moving forward is to split out the actions into actual extension points provided by the addin. I’m not sure how this is going to look exactly or how I have to refactor, since right now, VimAddin reads keyboard input and does things automatically. I plan to read over the Monodevelop addin tutorial to remind myself of how to go about creating a command, because I think that seems to be the minimum unit of functionality that you can bind with key bindings.&lt;/p&gt;
+
+&lt;p&gt;The latest checkin 1.1.10 introduces no new functionality but just reads the version info from the assembly and puts it in the preferences panel. I just wanted to bump to let people know the project has a pulse. Look forward to the next commit being a fix to the above-mentioned issue.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Jan 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-009</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-009</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 8</title>
+        <description>&lt;p&gt;Happy new year. I took some time off to work on non-coding hobbies, so I missed the last Sunday before the new year, but now I’m back.&lt;/p&gt;
+
+&lt;p&gt;This week, I got my feet wet with a little Ruby and tacked on categories for the Shiori theme. I’ve updated this and my personal blog to have categories but not my academic site since I don’t plan to blog a ton on it. Anyways, if you are interested in having it, check out my &lt;a href=&quot;http://alextsui05.github.io/shiori/categories-in-shiori&quot;&gt;fork&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Probably the next thing I want to do is to read up on some Homebrew scripts and see if I can write some of my own.&lt;/p&gt;
+
+&lt;p&gt;Anyways, I’ll probably get a leg up on setting up custom bindings for VimAddin this coming week.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 04 Jan 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-008</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-008</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 7</title>
+        <description>&lt;p&gt;This week, I finally submitted a paper for my research that had been keeping me occupied for the past several weeks. 
+As promised, I was able to put in a few hours to committing a new options panel for &lt;a href=&quot;http://github.com/alextsui05/VimAddin&quot;&gt;VimAddin&lt;/a&gt;.
+Now when you go into the Preferences window, you’ll be able to find this under Text Editor:&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;image-link&quot; href=&quot;/public/img/vim-addin-preferences-panel.png&quot;&gt;&lt;img src=&quot;/public/img/vim-addin-preferences-panel.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Right now, you still have to activate VimAddin in the same clunky way: install the addin, check this checkbox, and restart Monodevelop.
+I hope to figure this out next week so that when you uncheck the box above, it will switch you back to basic input mode.&lt;/p&gt;
+
+&lt;p&gt;Now that I have a UI set up, now I have to go through and pull out the Vim-specific keychords and make them customizable through a table widget, sort of like how &lt;a href=&quot;https://github.com/jaredpar/VsVim&quot;&gt;VsVim&lt;/a&gt; handles IDE/plugin shortcuts.
+I can’t wait to have &lt;code&gt;Ctrl+F&lt;/code&gt; map to page down once again!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Dec 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-007</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-007</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 6</title>
+        <description>&lt;p&gt;Nothing to report besides the shameful accumulation of cobwebs on my repositories this week. I even found a long-forgotten opened issue on the &lt;a href=&quot;https://github.com/alextsui05/blender-off-addon&quot;&gt;blender-off-addon&lt;/a&gt; project that asked for clarification about whether export works because of a stale label… Well, I fixed that, so I guess that’s something.&lt;/p&gt;
+
+&lt;p&gt;Next weekend for sure I will have something to report on. By this time next week, I will have finished this quarter off with a paper submission and officially on winter break. I’ll catch up with a lot of things that I have backlogged, but specifically I will get to work adding a menu to &lt;a href=&quot;https://github.com/alextsui05/VimAddin/issues/10&quot;&gt;VimAddin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Almost there!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 14 Dec 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-006</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-006</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 5</title>
+        <description>&lt;p&gt;Still busy with school. 11 days to go on this paper deadline.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Dec 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-005</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-005</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 4</title>
+        <description>&lt;p&gt;Nothing to report. According to the schedule, I won’t be working on anything other than this paper deadline for the next three weeks, so look forward for development to resume there. Specifically, I have features on backlog for VimAddin.&lt;/p&gt;
+
+&lt;p&gt;Note to self: post one-off scripts and tools as a gist that aren’t large enough to constitute a full repository project. At least it will be tied to my account somewhere and be searchable/referencable as opposed to being buried in a local directory on my desktop.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Nov 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-004</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-004</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 3</title>
+        <description>&lt;p&gt;The story of this past week has been a lot of bash scripting to generate reports from a directory of results that have been generating in my research. I found myself collecting and revisiting old scripts that I wrote and wishing that I could see what they were doing. The definitive way to find the answer is to read the script, but it is annoying to try to edit and then test a script that iterates and touches a large directory. So I made some utility functions that I’ll write new scripts to use. The scripts are in a &lt;a href=&quot;https://github.com/alextsui05/bash-cli-utils&quot;&gt;new project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I mainly write CMake/C++ projects, and I have been thinking of whether I should create a repository that collects a few template projects that seem useful for starting to build a Qt or VTK component. I’ll probably start small and just throw up the few that I have and commit more to it as I go.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Nov 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-003</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-003</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 2</title>
+        <description>&lt;p&gt;Nothing much to report, as I haven’t updated any of my projects.&lt;/p&gt;
+
+&lt;p&gt;I have been working on a bit of CMake code that will scan for and install non-system library dependencies when installing a project in Linux. I’ll shoot for a writeup some time in the next week.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Nov 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-002</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-002</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 1</title>
+        <description>&lt;p&gt;For now, I’ve decided to go with posting weekly updates on Sunday. At a minimum, I’ll post to report that there’s been no activity.&lt;/p&gt;
+
+&lt;p&gt;I’m pretty happy that &lt;a href=&quot;https://github.com/alextsui05/VimAddin&quot;&gt;VimAddin&lt;/a&gt; has acquired over a dozen stars, which shows that there is interest in the C# community for improving the tool. I’ve received both email and pull request about it recently. Revision 1.1.8 corrects the issue where the motion &lt;code&gt;[de]&lt;/code&gt; does not include the last character at the end of the token in the deletion – thanks to &lt;a href=&quot;https://github.com/yixiang&quot;&gt;yixiang&lt;/a&gt; for the patch.&lt;/p&gt;
+
+&lt;p&gt;I anticipate in the next five weeks, I will not have very much activity on Github, since I will be busy trying to make something happen for a school-related deadline.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 09 Nov 2014 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-001</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-001</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello World</title>
+        <description>&lt;p&gt;Hello, I’m going to be more actively documenting my efforts in open source through this blog. Follow me here to see what I’m up to, what I plan to work on, or see that I’m busy with other things in case there are no updates. Tweet at me if you like what I do or just want to say hi.&lt;/p&gt;
+
+&lt;p&gt;I’ll be back soon with updates.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 11 Oct 2014 00:00:00 -0700</pubDate>
+        <link>http://alextsui05.github.io/hello-world</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/hello-world</guid>
+        
+        <category>diary</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
