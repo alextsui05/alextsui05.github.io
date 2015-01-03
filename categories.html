@@ -1,0 +1,19 @@
+---
+title: Categories
+permalink: 'categories/index.html'
+---
+{% assign sortedcats = site.categories | sort %}
+{% for category in sortedcats %}
+  <a href="{{ category | first | category_link }}"><h3 class="section-header-archive">{{ category | first | capitalize }}</h3></a>
+    <ul>
+    {% for posts in category %}
+      {% for post in posts %}
+        {% if post.date != '' and post.date != nil and post.date != blank %}
+        <li><a class="post-title-archive" href="{{ post.url }}">{{ post.title }}</a>
+        <small class="text-muted">{{ post.date | date_to_string }}</small>
+        </li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </ul>
+{% endfor %}
