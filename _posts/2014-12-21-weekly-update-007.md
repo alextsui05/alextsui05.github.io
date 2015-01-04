@@ -1,5 +1,6 @@
 ---
 title: Weekly Update 7
+category: 'Weekly Update'
 ---
 This week, I finally submitted a paper for my research that had been keeping me occupied for the past several weeks. 
 As promised, I was able to put in a few hours to committing a new options panel for [VimAddin](http://github.com/alextsui05/VimAddin).

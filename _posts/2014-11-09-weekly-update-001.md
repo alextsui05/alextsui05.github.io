@@ -1,5 +1,6 @@
 ---
 title: Weekly Update 1
+category: 'Weekly Update'
 ---
 
 For now, I've decided to go with posting weekly updates on Sunday. At a minimum, I'll post to report that there's been no activity.

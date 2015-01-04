@@ -1,5 +1,6 @@
 ---
 title: Weekly Update 4
+category: 'Weekly Update'
 ---
 
 Nothing to report. According to the schedule, I won't be working on anything other than this paper deadline for the next three weeks, so look forward for development to resume there. Specifically, I have features on backlog for VimAddin.

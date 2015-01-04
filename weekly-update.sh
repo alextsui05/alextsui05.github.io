@@ -6,6 +6,7 @@ DATE=$(date +%Y-%m-%d)
 cat > _posts/${DATE}-weekly-update-${X2}.md << EOF
 ---
 title: Weekly Update $(echo $((X + 1)))
+category: 'Weekly Update'
 ---
 
 EOF

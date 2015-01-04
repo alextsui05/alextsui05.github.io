@@ -1,5 +1,6 @@
 ---
 title: Weekly Update 6
+category: 'Weekly Update'
 ---
 Nothing to report besides the shameful accumulation of cobwebs on my repositories this week. I even found a long-forgotten opened issue on the [blender-off-addon](https://github.com/alextsui05/blender-off-addon) project that asked for clarification about whether export works because of a stale label... Well, I fixed that, so I guess that's something.
 
