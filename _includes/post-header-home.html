@@ -1,1 +1,6 @@
-<p class="text-muted">{{ post.date | date_to_string }}</p>
+<p class="text-muted">
+{{ post.date | date_to_string }}
+{% if post.categories != empty %}
+/ Filed under {{ post.categories | category_links }}
+{% endif %}
+</p>
