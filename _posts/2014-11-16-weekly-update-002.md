@@ -1,6 +1,6 @@
 ---
 title: Weekly Update 2
-category: 'Weekly Update'
+category: [Weekly Update, cmake]
 ---
 
 Nothing much to report, as I haven't updated any of my projects.
