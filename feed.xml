@@ -5,9 +5,121 @@
     <description>CS grad @ UC Davis who wishes to have nice things in C++, Python, Bash, C# and so, writes them.</description>
     <link>http://alextsui05.github.io/</link>
     <atom:link href="http://alextsui05.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 11 Jan 2015 17:14:24 -0800</pubDate>
-    <lastBuildDate>Sun, 11 Jan 2015 17:14:24 -0800</lastBuildDate>
+    <pubDate>Sun, 08 Feb 2015 18:00:25 -0800</pubDate>
+    <lastBuildDate>Sun, 08 Feb 2015 18:00:25 -0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Weekly Update 13 - Going on hiatus</title>
+        <description>&lt;p&gt;I just cleaned up and pushed the VimAddin custom keybindings, with &lt;code&gt;Control+B&lt;/code&gt; for page up and &lt;code&gt;Control+F&lt;/code&gt; for page down. By default, this will conflict with some preset IDE shortcuts and hence do nothing, but going into &lt;code&gt;Preferences &amp;gt; Key Bindings&lt;/code&gt; will signal you to address these conflicts. It should be safe to unbind the default actions for Control+F (which you can replace with VimAddin’s find command: /) and Control+B (which you can replace with VimAddin’s match brace command: %).&lt;/p&gt;
+
+&lt;p&gt;In other news, I’ve got a chance to refresh my ties with CGAL. Waqar and Efi have finished their work on polycurve arrangements. This generalizes CGAL’s existing polyline arrangement, whose curve is a list of line segments joined end-to-end. Now you can have a list of arbitrary curve type (Bezier, algebraic, unbounded linear segments, for example). I need to pick up work on the demo again, which suffers from long compilation time as is and still hasn’t been integrated. Also with CGAL, coincidentally, a &lt;a href=&quot;https://github.com/acgetchell&quot;&gt;fellow UCD student&lt;/a&gt; contacted me about contributing to CGAL. His &lt;a href=&quot;http://collaborate.mozillascience.org/projects/quantumGravity&quot;&gt;application&lt;/a&gt; requires some unsupported Pachner moves in the 3D Triangulation package. It’s cool to get a chance to keep involved and I hope more people do now that CGAL is moving to more open development workflows on Github in the coming months.&lt;/p&gt;
+
+&lt;p&gt;With that, I’m going on hiatus for the next month. I will need to focus on my school project until the upcoming deadline at the beginning of March. Wish me luck, and see you back online next month.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Feb 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-013</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-013</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 12 - Custom key bindings in VimAddin</title>
+        <description>&lt;p&gt;This weekly update comes slightly delayed. Just wanted to say that the problem from &lt;a href=&quot;/weekly-update-011&quot;&gt;last week&lt;/a&gt; has been fixed. The reason why it hasn’t been scrubbed and published yet is because I was running into some technical difficulties from a source build of Monodevelop I was testing on. I just tested the addin manually on the latest stable release of Monodevelop (4.7 as of this writing) and it seems to be working fine. So look forward to an update being pushed out during this week some time.&lt;/p&gt;
+
+&lt;p&gt;Finally, we can scroll up and down again!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Feb 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-012</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-012</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 11 - VimAddin custom keybindings progress</title>
+        <description>&lt;p&gt;Any Command that you add can be rebound by the user through Preferences &amp;gt; Key Bindings. I register a command for page down as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Extension&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;path=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/MonoDevelop/Ide/Commands&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Category&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;_name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VimAddin&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VimAddin&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Command&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VimAddin.VimAddinCommands.PageDown&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;_label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page Down&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;_description=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Page down in the text editor&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;shortcut=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Control|F&amp;quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;defaultHandler=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;VimAddin.NullHandler&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Category&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Extension&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This creates a categorized command as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/public/img/vimaddin-keybindings.png&quot; class=&quot;image-link&quot;&gt;&lt;img src=&quot;/public/img/vimaddin-keybindings.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The nice thing is once this is set up, the user will be able to see at a glance if there are any conflicting key bindings.&lt;/p&gt;
+
+&lt;p&gt;With this setup, the &lt;kbd&gt;Control+F&lt;/kbd&gt; will trigger the handler, but the key event stops there; however, it needs to continue to the VimAddin edit mode so that it executes the page down action. I’m trying to programmatically send the &lt;kbd&gt;Control+F&lt;/kbd&gt; but it results in an odd null pointer exception:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Error while executing command: Page Down
+System.NullReferenceException: Object reference not set to an instance of an object
+  at VimAddin.ViEditMode.CheckVisualMode () [0x00000] in &amp;lt;filename unknown&amp;gt;:0 
+  at VimAddin.ViEditMode.HandleKeypress (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &amp;lt;filename unknown&amp;gt;:0 
+  at VimAddin.IdeViMode.HandleKeypress (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &amp;lt;filename unknown&amp;gt;:0 
+  at VimAddin.IdeViMode.SendKeys (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &amp;lt;filename unknown&amp;gt;:0 
+  at VimAddin.NullHandler.Run () [0x00000] in &amp;lt;filename unknown&amp;gt;:0 
+  at MonoDevelop.Components.Commands.CommandHandler.Run (System.Object dataItem) [0x00002] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandHandler.cs:61 
+  at MonoDevelop.Components.Commands.CommandHandler.InternalRun (System.Object dataItem) [0x00003] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandHandler.cs:42 
+  at MonoDevelop.Components.Commands.CommandManager.DefaultDispatchCommand (MonoDevelop.Components.Commands.ActionCommand cmd, MonoDevelop.Components.Commands.CommandInfo info, System.Object dataItem, System.Object target, CommandSource source) [0x00085] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandManager.cs:1151 
+  at MonoDevelop.Components.Commands.CommandManager.DispatchCommand (System.Object commandId, System.Object dataItem, System.Object initialTarget, CommandSource source) [0x002fc] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandManager.cs:1118
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I have a feeling it’s something simple and &lt;a href=&quot;https://forums.xamarin.com/discussion/comment/99253#Comment_99253&quot;&gt;have already asked&lt;/a&gt; about it on the Xamarin forums. Once I get it, I’ll go ahead and make key bindings for the other &lt;kbd&gt;Control&lt;/kbd&gt; actions.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Jan 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-011</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-011</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
+    
+      <item>
+        <title>Weekly Update 10</title>
+        <description>&lt;p&gt;In short, I spend this weekend learning more about the hype that is &lt;a href=&quot;https://neovim.org&quot;&gt;neovim&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;considering-neovim&quot;&gt;Considering neovim&lt;/h2&gt;
+
+&lt;p&gt;I first heard it posted on Xamarin forums a week or two ago. As far as I understand it, it’s a massive overhaul of vim to make it more modular and extensible with any programming language. I think two big goals for doing this is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make it easy to contribute to.  There was an interview last November with Bram Moolenaar where he jokes that the way to ensure future success of the Vim project is to &lt;a href=&quot;http://www.binpress.com/blog/2014/11/19/vim-creator-bram-moolenaar-interview/&quot;&gt;keep him alive&lt;/a&gt;. I laughed, but I guess it’s partly true.&lt;/li&gt;
+  &lt;li&gt;Make it easy to embed in other editors. Since it runs headless and receives input remotely, the interface can be anything from traditional curses to your favorite editor or IDE. Just a few days ago, there was a video showing &lt;a href=&quot;https://www.youtube.com/watch?v=yluIxQRjUCk&quot;&gt;neovim embedded in the Atom editor&lt;/a&gt;. Also, trolling the neovim Google group, there’s neovim support for Floobits, one of those collaborative code editing services, so you can collaborate from the comfort of your terminal while people can chime in from their own instance of neovim or the web.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a class=&quot;image-link&quot; href=&quot;/public/img/floobits.png&quot;&gt;&lt;img src=&quot;/public/img/floobits.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, let’s not get carried away, though. It’s not like we can suddenly do this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/img/ncis.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I think it would be great to just embed vim in MonoDevelop rather than emulate it. I will have to check out the &lt;a href=&quot;https://github.com/carlosdcastillo/vim-mode&quot;&gt;proof of concept&lt;/a&gt;, which has been in the works for 11 months now. And neovim’s website states it is pre-alpha, with features still missing. Neocomplete, for example, doesn’t work because Lua support is still coming. In spite of the long road ahead, I can only conclude by stating the emotion I am filled with at the moment: &lt;a href=&quot;https://github.com/Shougo/deoplete.nvim/issues/1&quot;&gt;Excitement&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h2 id=&quot;gedit-python-plugin&quot;&gt;Gedit python plugin&lt;/h2&gt;
+
+&lt;p&gt;Another detour that I took is fiddle with making a gedit plugin. The &lt;a href=&quot;https://wiki.gnome.org/Apps/Gedit/PythonPluginHowTo&quot;&gt;plugin tutorial&lt;/a&gt; is written for gedit 3, but it didn’t mention that it requires python 3 to be used as the loader. Anyways, I got it working and I think I can hack jedi in without too much trouble. More on this later.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Jan 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-010</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-010</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
     
       <item>
         <title>Weekly Update 9</title>
@@ -87,6 +199,8 @@ I can’t wait to have &lt;code&gt;Ctrl+F&lt;/code&gt; map to page down once aga
         <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-006</guid>
         
         
+        <category>blender</category>
+        
         <category>weekly update</category>
         
       </item>
@@ -116,68 +230,6 @@ I can’t wait to have &lt;code&gt;Ctrl+F&lt;/code&gt; map to page down once aga
         
         
         <category>weekly update</category>
-        
-      </item>
-    
-      <item>
-        <title>Weekly Update 3</title>
-        <description>&lt;p&gt;The story of this past week has been a lot of bash scripting to generate reports from a directory of results that have been generating in my research. I found myself collecting and revisiting old scripts that I wrote and wishing that I could see what they were doing. The definitive way to find the answer is to read the script, but it is annoying to try to edit and then test a script that iterates and touches a large directory. So I made some utility functions that I’ll write new scripts to use. The scripts are in a &lt;a href=&quot;https://github.com/alextsui05/bash-cli-utils&quot;&gt;new project&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I mainly write CMake/C++ projects, and I have been thinking of whether I should create a repository that collects a few template projects that seem useful for starting to build a Qt or VTK component. I’ll probably start small and just throw up the few that I have and commit more to it as I go.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 23 Nov 2014 00:00:00 -0800</pubDate>
-        <link>http://alextsui05.github.io/weekly-update-003</link>
-        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-003</guid>
-        
-        
-        <category>weekly update</category>
-        
-      </item>
-    
-      <item>
-        <title>Weekly Update 2</title>
-        <description>&lt;p&gt;Nothing much to report, as I haven’t updated any of my projects.&lt;/p&gt;
-
-&lt;p&gt;I have been working on a bit of CMake code that will scan for and install non-system library dependencies when installing a project in Linux. I’ll shoot for a writeup some time in the next week.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 16 Nov 2014 00:00:00 -0800</pubDate>
-        <link>http://alextsui05.github.io/weekly-update-002</link>
-        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-002</guid>
-        
-        
-        <category>weekly update</category>
-        
-      </item>
-    
-      <item>
-        <title>Weekly Update 1</title>
-        <description>&lt;p&gt;For now, I’ve decided to go with posting weekly updates on Sunday. At a minimum, I’ll post to report that there’s been no activity.&lt;/p&gt;
-
-&lt;p&gt;I’m pretty happy that &lt;a href=&quot;https://github.com/alextsui05/VimAddin&quot;&gt;VimAddin&lt;/a&gt; has acquired over a dozen stars, which shows that there is interest in the C# community for improving the tool. I’ve received both email and pull request about it recently. Revision 1.1.8 corrects the issue where the motion &lt;code&gt;[de]&lt;/code&gt; does not include the last character at the end of the token in the deletion – thanks to &lt;a href=&quot;https://github.com/yixiang&quot;&gt;yixiang&lt;/a&gt; for the patch.&lt;/p&gt;
-
-&lt;p&gt;I anticipate in the next five weeks, I will not have very much activity on Github, since I will be busy trying to make something happen for a school-related deadline.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 09 Nov 2014 00:00:00 -0800</pubDate>
-        <link>http://alextsui05.github.io/weekly-update-001</link>
-        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-001</guid>
-        
-        
-        <category>weekly update</category>
-        
-      </item>
-    
-      <item>
-        <title>Hello World</title>
-        <description>&lt;p&gt;Hello, I’m going to be more actively documenting my efforts in open source through this blog. Follow me here to see what I’m up to, what I plan to work on, or see that I’m busy with other things in case there are no updates. Tweet at me if you like what I do or just want to say hi.&lt;/p&gt;
-
-&lt;p&gt;I’ll be back soon with updates.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 11 Oct 2014 00:00:00 -0700</pubDate>
-        <link>http://alextsui05.github.io/hello-world</link>
-        <guid isPermaLink="true">http://alextsui05.github.io/hello-world</guid>
-        
-        <category>diary</category>
-        
         
       </item>
     

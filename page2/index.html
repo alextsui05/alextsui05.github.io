@@ -59,47 +59,93 @@
             
 <div class="post-header-home">
   <h1 class="post-title-home">
-    <a href="/weekly-update-006">Weekly Update 6</a>
+    <a href="/weekly-update-010">Weekly Update 10</a>
   </h1>
-  <p class="text-muted">14 Dec 2014</p>
+  <p class="text-muted">
+18 Jan 2015
+
+/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
+
+</p>
 
 </div>
 <div class="post-excerpt-home">
-  <p>Nothing to report besides the shameful accumulation of cobwebs on my repositories this week. I even found a long-forgotten opened issue on the <a href="https://github.com/alextsui05/blender-off-addon">blender-off-addon</a> project that asked for clarification about whether export works because of a stale label… Well, I fixed that, so I guess that’s something.</p>
+  <p>In short, I spend this weekend learning more about the hype that is <a href="https://neovim.org">neovim</a>.</p>
 
-<p>Next weekend for sure I will have something to report on. By this time next week, I will have finished this quarter off with a paper submission and officially on winter break. I’ll catch up with a lot of things that I have backlogged, but specifically I will get to work adding a menu to <a href="https://github.com/alextsui05/VimAddin/issues/10">VimAddin</a>.</p>
+<h2 id="considering-neovim">Considering neovim</h2>
 
-<p>Almost there!</p>
+<p>I first heard it posted on Xamarin forums a week or two ago. As far as I understand it, it’s a massive overhaul of vim to make it more modular and extensible with any programming language. I think two big goals for doing this is:</p>
 
-  <!--p class="text-right"><a href="/weekly-update-006">Continue Reading &rarr;</a></p-->
+<ol>
+  <li>Make it easy to contribute to.  There was an interview last November with Bram Moolenaar where he jokes that the way to ensure future success of the Vim project is to <a href="http://www.binpress.com/blog/2014/11/19/vim-creator-bram-moolenaar-interview/">keep him alive</a>. I laughed, but I guess it’s partly true.</li>
+  <li>Make it easy to embed in other editors. Since it runs headless and receives input remotely, the interface can be anything from traditional curses to your favorite editor or IDE. Just a few days ago, there was a video showing <a href="https://www.youtube.com/watch?v=yluIxQRjUCk">neovim embedded in the Atom editor</a>. Also, trolling the neovim Google group, there’s neovim support for Floobits, one of those collaborative code editing services, so you can collaborate from the comfort of your terminal while people can chime in from their own instance of neovim or the web.</li>
+</ol>
+
+<p><a class="image-link" href="/public/img/floobits.png"><img src="/public/img/floobits.png" /></a></p>
+
+<p>Well, let’s not get carried away, though. It’s not like we can suddenly do this.</p>
+
+<p><img src="/public/img/ncis.gif" /></p>
+
+<p>I think it would be great to just embed vim in MonoDevelop rather than emulate it. I will have to check out the <a href="https://github.com/carlosdcastillo/vim-mode">proof of concept</a>, which has been in the works for 11 months now. And neovim’s website states it is pre-alpha, with features still missing. Neocomplete, for example, doesn’t work because Lua support is still coming. In spite of the long road ahead, I can only conclude by stating the emotion I am filled with at the moment: <a href="https://github.com/Shougo/deoplete.nvim/issues/1">Excitement</a>!</p>
+
+<h2 id="gedit-python-plugin">Gedit python plugin</h2>
+
+<p>Another detour that I took is fiddle with making a gedit plugin. The <a href="https://wiki.gnome.org/Apps/Gedit/PythonPluginHowTo">plugin tutorial</a> is written for gedit 3, but it didn’t mention that it requires python 3 to be used as the loader. Anyways, I got it working and I think I can hack jedi in without too much trouble. More on this later.</p>
+
+  <!--p class="text-right"><a href="/weekly-update-010">Continue Reading &rarr;</a></p-->
 </div>
 
 <div class="post-header-home">
   <h1 class="post-title-home">
-    <a href="/weekly-update-005">Weekly Update 5</a>
+    <a href="/weekly-update-009">Weekly Update 9</a>
   </h1>
-  <p class="text-muted">07 Dec 2014</p>
+  <p class="text-muted">
+11 Jan 2015
+
+/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
+
+</p>
 
 </div>
 <div class="post-excerpt-home">
-  <p>Still busy with school. 11 days to go on this paper deadline.</p>
+  <p>Made a baby step with VimAddin. Basically, the issue I discovered a few months back that prevented you from effectively scrolling down in VimAddin had to do with conflicting keybindings.</p>
 
-  <!--p class="text-right"><a href="/weekly-update-005">Continue Reading &rarr;</a></p-->
+<p><img src="public/img/md-debugger-keybindings.png" alt="Bad keybindings" /></p>
+
+<p>To perform these debugger actions, the user would hit Control+D first, followed by the second key. This broke the only way VimAddin had to scroll down and made it impossible for me to use.</p>
+
+<p>Now that I know this, the workaround is to unbind/rebind the conflicting key bindings using Control+D or Control+F.</p>
+
+<p>The solution moving forward is to split out the actions into actual extension points provided by the addin. I’m not sure how this is going to look exactly or how I have to refactor, since right now, VimAddin reads keyboard input and does things automatically. I plan to read over the Monodevelop addin tutorial to remind myself of how to go about creating a command, because I think that seems to be the minimum unit of functionality that you can bind with key bindings.</p>
+
+<p>The latest checkin 1.1.10 introduces no new functionality but just reads the version info from the assembly and puts it in the preferences panel. I just wanted to bump to let people know the project has a pulse. Look forward to the next commit being a fix to the above-mentioned issue.</p>
+
+  <!--p class="text-right"><a href="/weekly-update-009">Continue Reading &rarr;</a></p-->
 </div>
 
 <div class="post-header-home">
   <h1 class="post-title-home">
-    <a href="/weekly-update-004">Weekly Update 4</a>
+    <a href="/weekly-update-008">Weekly Update 8</a>
   </h1>
-  <p class="text-muted">30 Nov 2014</p>
+  <p class="text-muted">
+04 Jan 2015
+
+/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
+
+</p>
 
 </div>
 <div class="post-excerpt-home">
-  <p>Nothing to report. According to the schedule, I won’t be working on anything other than this paper deadline for the next three weeks, so look forward for development to resume there. Specifically, I have features on backlog for VimAddin.</p>
+  <p>Happy new year. I took some time off to work on non-coding hobbies, so I missed the last Sunday before the new year, but now I’m back.</p>
 
-<p>Note to self: post one-off scripts and tools as a gist that aren’t large enough to constitute a full repository project. At least it will be tied to my account somewhere and be searchable/referencable as opposed to being buried in a local directory on my desktop.</p>
+<p>This week, I got my feet wet with a little Ruby and tacked on categories for the Shiori theme. I’ve updated this and my personal blog to have categories but not my academic site since I don’t plan to blog a ton on it. Anyways, if you are interested in having it, check out my <a href="http://alextsui05.github.io/shiori/categories-in-shiori">fork</a>.</p>
 
-  <!--p class="text-right"><a href="/weekly-update-004">Continue Reading &rarr;</a></p-->
+<p>Probably the next thing I want to do is to read up on some Homebrew scripts and see if I can write some of my own.</p>
+
+<p>Anyways, I’ll probably get a leg up on setting up custom bindings for VimAddin this coming week.</p>
+
+  <!--p class="text-right"><a href="/weekly-update-008">Continue Reading &rarr;</a></p-->
 </div>
 
 

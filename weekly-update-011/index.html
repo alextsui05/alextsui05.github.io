@@ -8,9 +8,9 @@
     <link href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="canonical" href="http://alextsui05.github.io/">
+    <link rel="canonical" href="http://alextsui05.github.io/weekly-update-011">
     <link rel="shortcut icon" href="/favicon.ico">
-    <title>alextsui05.github.io</title>
+    <title>Weekly Update 11 - VimAddin custom keybindings progress | alextsui05.github.io</title>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -56,53 +56,8 @@
       <div class="row">
         
           <div class="col-sm-8">
-            
-<div class="post-header-home">
-  <h1 class="post-title-home">
-    <a href="/weekly-update-013">Weekly Update 13 - Going on hiatus</a>
-  </h1>
-  <p class="text-muted">
-08 Feb 2015
-
-/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
-
-</p>
-
-</div>
-<div class="post-excerpt-home">
-  <p>I just cleaned up and pushed the VimAddin custom keybindings, with <code>Control+B</code> for page up and <code>Control+F</code> for page down. By default, this will conflict with some preset IDE shortcuts and hence do nothing, but going into <code>Preferences &gt; Key Bindings</code> will signal you to address these conflicts. It should be safe to unbind the default actions for Control+F (which you can replace with VimAddin’s find command: /) and Control+B (which you can replace with VimAddin’s match brace command: %).</p>
-
-<p>In other news, I’ve got a chance to refresh my ties with CGAL. Waqar and Efi have finished their work on polycurve arrangements. This generalizes CGAL’s existing polyline arrangement, whose curve is a list of line segments joined end-to-end. Now you can have a list of arbitrary curve type (Bezier, algebraic, unbounded linear segments, for example). I need to pick up work on the demo again, which suffers from long compilation time as is and still hasn’t been integrated. Also with CGAL, coincidentally, a <a href="https://github.com/acgetchell">fellow UCD student</a> contacted me about contributing to CGAL. His <a href="http://collaborate.mozillascience.org/projects/quantumGravity">application</a> requires some unsupported Pachner moves in the 3D Triangulation package. It’s cool to get a chance to keep involved and I hope more people do now that CGAL is moving to more open development workflows on Github in the coming months.</p>
-
-<p>With that, I’m going on hiatus for the next month. I will need to focus on my school project until the upcoming deadline at the beginning of March. Wish me luck, and see you back online next month.</p>
-
-  <!--p class="text-right"><a href="/weekly-update-013">Continue Reading &rarr;</a></p-->
-</div>
-
-<div class="post-header-home">
-  <h1 class="post-title-home">
-    <a href="/weekly-update-012">Weekly Update 12 - Custom key bindings in VimAddin</a>
-  </h1>
-  <p class="text-muted">
-02 Feb 2015
-
-/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
-
-</p>
-
-</div>
-<div class="post-excerpt-home">
-  <p>This weekly update comes slightly delayed. Just wanted to say that the problem from <a href="/weekly-update-011">last week</a> has been fixed. The reason why it hasn’t been scrubbed and published yet is because I was running into some technical difficulties from a source build of Monodevelop I was testing on. I just tested the addin manually on the latest stable release of Monodevelop (4.7 as of this writing) and it seems to be working fine. So look forward to an update being pushed out during this week some time.</p>
-
-<p>Finally, we can scroll up and down again!</p>
-
-  <!--p class="text-right"><a href="/weekly-update-012">Continue Reading &rarr;</a></p-->
-</div>
-
-<div class="post-header-home">
-  <h1 class="post-title-home">
-    <a href="/weekly-update-011">Weekly Update 11 - VimAddin custom keybindings progress</a>
-  </h1>
+            <div class="post-header">
+  <h1 class="post-title-main">Weekly Update 11 - VimAddin custom keybindings progress</h1>
   <p class="text-muted">
 25 Jan 2015
 
@@ -111,7 +66,7 @@
 </p>
 
 </div>
-<div class="post-excerpt-home">
+<div class="post-content">
   <p>Any Command that you add can be rebound by the user through Preferences &gt; Key Bindings. I register a command for page down as follows:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Extension</span> <span class="na">path=</span><span class="s">&quot;/MonoDevelop/Ide/Commands&quot;</span><span class="nt">&gt;</span>
@@ -147,34 +102,41 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 
 <p>I have a feeling it’s something simple and <a href="https://forums.xamarin.com/discussion/comment/99253#Comment_99253">have already asked</a> about it on the Xamarin forums. Once I get it, I’ll go ahead and make key bindings for the other <kbd>Control</kbd> actions.</p>
 
-  <!--p class="text-right"><a href="/weekly-update-011">Continue Reading &rarr;</a></p-->
+</div>
+<div class="post-footer">
+  
 </div>
 
+  
+    <div class="post-navs row">
+      
+        <div class="col-md-6 post-nav">
+          <h3 class="section-header">
+            Older
+            <span class="text-muted"> &middot; </span>
+            <a href="/archive">View Archive (14)</a>
+          </h3>
+          <h2 class="post-title-link"><a href="/weekly-update-010">Weekly Update 10</a></h2>
+          <p>In short, I spend this weekend learning more about the hype that is <a href="https://neovim.org">neovim</a>.</p>
 
-<!--div class="pagination">
-  
-    <a class="pagination-item older" href="page2">Older</a>
-  
-</div>
-<div class="pagination text-right">
-  
-    <span class="pagination-item newer text-right">Newer</span>
-  
-</div-->
-<div class="post-navs row">
-  
-    <div class="col-md-6 post-nav">
-      <h3 class="section-header">
-        <a href="/page2">&larr; Older</a>
-      </h3>
+
+        </div>
+      
+      
+        <div class="col-md-6 post-nav">
+          <h3 class="section-header">
+            Newer
+            
+          </h3>
+          <h2 class="post-title-link"><a href="/weekly-update-012">Weekly Update 12 - Custom key bindings in VimAddin</a></h2>
+          <p>This weekly update comes slightly delayed. Just wanted to say that the problem from <a href="{% post_url 2015-01-25-weekly-update-011 %}">last week</a> has been fixed. The reason why it hasn&#8217;t been scrubbed and published yet is because I was running into some technical difficulties from a source build of Monodevelop I was testing on. I just tested the addin manually on the latest stable release of Monodevelop (4.7 as of this writing) and it seems to be working fine. So look forward to an update being pushed out during this week some time.</p>
+
+
+        </div>
+      
     </div>
   
-  
-    <div class="col-md-6 post-nav">
-      <h3 class="section-header">Newer &rarr;</h3>
-    </div>
-  
-</div>
+
 
           </div>
           <div class="col-sm-4">
