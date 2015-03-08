@@ -37,6 +37,7 @@
         <div class="collapse navbar-collapse js-navbar-collapse">
           <ul class="navbar-nav nav">
             <li><a href="/about.html">About</a></li>
+<li><a href="/repos">Repos</a></li>
 <li><a href="/categories">Categories</a></li>
 <li><a href="/archive">Archive</a></li>
 
@@ -57,6 +58,36 @@
         
           <div class="col-sm-8">
             
+<div class="post-header-home">
+  <h1 class="post-title-home">
+    <a href="/weekly-update-014">Weekly Update 14 - Tidying up projects</a>
+  </h1>
+  <p class="text-muted">
+07 Mar 2015
+
+/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
+
+</p>
+
+</div>
+<div class="post-excerpt-home">
+  <p>I took the time to commit some small little projects I’ve accumulated over the
+past month or so.  Check out <a href="http://alextsui05.github.io/toolbox">toolbox</a>,
+where I will stash my small scripts from now on. Check out
+<a href="https://github.com/alextsui05/latex-tikz-template">latex-tikz-template</a> which
+is a template LaTeX makefile project that I’d been wishing that I had.</p>
+
+<p>I know it takes someone actually poking around to find things and figure out
+how they’re used, but in general, I’m just trying to make these things a little
+more visible by making pages describing what they’ll find here and there.</p>
+
+<p>In other news, CGAL is coming to Github very, very soon! I’m going to have to
+write a blog about the new surface mesh data structure introduced in 4.6, and I
+need to tend to the arrangement demo as well.</p>
+
+  <!--p class="text-right"><a href="/weekly-update-014">Continue Reading &rarr;</a></p-->
+</div>
+
 <div class="post-header-home">
   <h1 class="post-title-home">
     <a href="/weekly-update-013">Weekly Update 13 - Going on hiatus</a>
@@ -97,57 +128,6 @@
 <p>Finally, we can scroll up and down again!</p>
 
   <!--p class="text-right"><a href="/weekly-update-012">Continue Reading &rarr;</a></p-->
-</div>
-
-<div class="post-header-home">
-  <h1 class="post-title-home">
-    <a href="/weekly-update-011">Weekly Update 11 - VimAddin custom keybindings progress</a>
-  </h1>
-  <p class="text-muted">
-25 Jan 2015
-
-/ Filed under <a class='category' href='/categories/weekly-update/'>Weekly Update</a>
-
-</p>
-
-</div>
-<div class="post-excerpt-home">
-  <p>Any Command that you add can be rebound by the user through Preferences &gt; Key Bindings. I register a command for page down as follows:</p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Extension</span> <span class="na">path=</span><span class="s">&quot;/MonoDevelop/Ide/Commands&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;Category</span> <span class="na">_name=</span><span class="s">&quot;VimAddin&quot;</span> <span class="na">id=</span><span class="s">&quot;VimAddin&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;Command</span> <span class="na">id=</span><span class="s">&quot;VimAddin.VimAddinCommands.PageDown&quot;</span>
-            <span class="na">_label=</span><span class="s">&quot;Page Down&quot;</span>
-            <span class="na">_description=</span><span class="s">&quot;Page down in the text editor&quot;</span>
-            <span class="na">shortcut=</span><span class="s">&quot;Control|F&quot;</span>
-            <span class="na">defaultHandler=</span><span class="s">&quot;VimAddin.NullHandler&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/Category&gt;</span>
-<span class="nt">&lt;/Extension&gt;</span></code></pre></div>
-
-<p>This creates a categorized command as follows:</p>
-
-<p><a href="/public/img/vimaddin-keybindings.png" class="image-link"><img src="/public/img/vimaddin-keybindings.png" /></a></p>
-
-<p>The nice thing is once this is set up, the user will be able to see at a glance if there are any conflicting key bindings.</p>
-
-<p>With this setup, the <kbd>Control+F</kbd> will trigger the handler, but the key event stops there; however, it needs to continue to the VimAddin edit mode so that it executes the page down action. I’m trying to programmatically send the <kbd>Control+F</kbd> but it results in an odd null pointer exception:</p>
-
-<pre><code>Error while executing command: Page Down
-System.NullReferenceException: Object reference not set to an instance of an object
-  at VimAddin.ViEditMode.CheckVisualMode () [0x00000] in &lt;filename unknown&gt;:0 
-  at VimAddin.ViEditMode.HandleKeypress (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &lt;filename unknown&gt;:0 
-  at VimAddin.IdeViMode.HandleKeypress (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &lt;filename unknown&gt;:0 
-  at VimAddin.IdeViMode.SendKeys (Key key, UInt32 unicodeKey, ModifierType modifier) [0x00000] in &lt;filename unknown&gt;:0 
-  at VimAddin.NullHandler.Run () [0x00000] in &lt;filename unknown&gt;:0 
-  at MonoDevelop.Components.Commands.CommandHandler.Run (System.Object dataItem) [0x00002] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandHandler.cs:61 
-  at MonoDevelop.Components.Commands.CommandHandler.InternalRun (System.Object dataItem) [0x00003] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandHandler.cs:42 
-  at MonoDevelop.Components.Commands.CommandManager.DefaultDispatchCommand (MonoDevelop.Components.Commands.ActionCommand cmd, MonoDevelop.Components.Commands.CommandInfo info, System.Object dataItem, System.Object target, CommandSource source) [0x00085] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandManager.cs:1151 
-  at MonoDevelop.Components.Commands.CommandManager.DispatchCommand (System.Object commandId, System.Object dataItem, System.Object initialTarget, CommandSource source) [0x002fc] in ../monodevelop/main/src/core/MonoDevelop.Ide/MonoDevelop.Components.Commands/CommandManager.cs:1118
-</code></pre>
-
-<p>I have a feeling it’s something simple and <a href="https://forums.xamarin.com/discussion/comment/99253#Comment_99253">have already asked</a> about it on the Xamarin forums. Once I get it, I’ll go ahead and make key bindings for the other <kbd>Control</kbd> actions.</p>
-
-  <!--p class="text-right"><a href="/weekly-update-011">Continue Reading &rarr;</a></p-->
 </div>
 
 

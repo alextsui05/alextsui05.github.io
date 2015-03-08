@@ -5,9 +5,34 @@
     <description>CS grad @ UC Davis who wishes to have nice things in C++, Python, Bash, C# and so, writes them.</description>
     <link>http://alextsui05.github.io/</link>
     <atom:link href="http://alextsui05.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 08 Feb 2015 18:00:25 -0800</pubDate>
-    <lastBuildDate>Sun, 08 Feb 2015 18:00:25 -0800</lastBuildDate>
+    <pubDate>Sat, 07 Mar 2015 19:37:26 -0800</pubDate>
+    <lastBuildDate>Sat, 07 Mar 2015 19:37:26 -0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Weekly Update 14 - Tidying up projects</title>
+        <description>&lt;p&gt;I took the time to commit some small little projects I’ve accumulated over the
+past month or so.  Check out &lt;a href=&quot;http://alextsui05.github.io/toolbox&quot;&gt;toolbox&lt;/a&gt;,
+where I will stash my small scripts from now on. Check out
+&lt;a href=&quot;https://github.com/alextsui05/latex-tikz-template&quot;&gt;latex-tikz-template&lt;/a&gt; which
+is a template LaTeX makefile project that I’d been wishing that I had.&lt;/p&gt;
+
+&lt;p&gt;I know it takes someone actually poking around to find things and figure out
+how they’re used, but in general, I’m just trying to make these things a little
+more visible by making pages describing what they’ll find here and there.&lt;/p&gt;
+
+&lt;p&gt;In other news, CGAL is coming to Github very, very soon! I’m going to have to
+write a blog about the new surface mesh data structure introduced in 4.6, and I
+need to tend to the arrangement demo as well.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 07 Mar 2015 00:00:00 -0800</pubDate>
+        <link>http://alextsui05.github.io/weekly-update-014</link>
+        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-014</guid>
+        
+        
+        <category>weekly update</category>
+        
+      </item>
     
       <item>
         <title>Weekly Update 13 - Going on hiatus</title>
@@ -212,21 +237,6 @@ I can’t wait to have &lt;code&gt;Ctrl+F&lt;/code&gt; map to page down once aga
         <pubDate>Sun, 07 Dec 2014 00:00:00 -0800</pubDate>
         <link>http://alextsui05.github.io/weekly-update-005</link>
         <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-005</guid>
-        
-        
-        <category>weekly update</category>
-        
-      </item>
-    
-      <item>
-        <title>Weekly Update 4</title>
-        <description>&lt;p&gt;Nothing to report. According to the schedule, I won’t be working on anything other than this paper deadline for the next three weeks, so look forward for development to resume there. Specifically, I have features on backlog for VimAddin.&lt;/p&gt;
-
-&lt;p&gt;Note to self: post one-off scripts and tools as a gist that aren’t large enough to constitute a full repository project. At least it will be tied to my account somewhere and be searchable/referencable as opposed to being buried in a local directory on my desktop.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 -0800</pubDate>
-        <link>http://alextsui05.github.io/weekly-update-004</link>
-        <guid isPermaLink="true">http://alextsui05.github.io/weekly-update-004</guid>
         
         
         <category>weekly update</category>
