@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Hello again Jekyll - Alex Tsui</title>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    <div class="py-24 max-w-4xl mx-auto">
+      <div class="sticky top-0 bg-white dark:bg-slate-800 pb-3">
+  <nav>
+    <ul class="flex flex-col space-y-3 md:space-y-0 md:space-x-8 md:flex-row md:py-3">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="#" data-toggle-dark>Toggle dark mode</a>
+      </li>
+      <li>
+        <a href="https://github.com/alextsui05/alextsui05.github.io/">Github</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+      <div>
+        <h1 class="font-bold text-4xl">Hello again Jekyll</h1>
+        <span class="font-bold">2024-09-28</span>
+      </div>
+      <div class="mod_post py-24">
+        <p>Hello again Jekyll!</p>
+
+<p>I was looking into rebuilding a personal site and was bouncing back and forth between a few options.
+I wanted something simple, and what could be simpler than straight HTML, CSS, and Javascript?
+As those are all static files, deploying would be as simple as uploading it to a web server.
+Choosing Github pages, the cost of operating that is basically free.
+This seemed like a place to start, until I thought it would be nice to share and discuss code snippets.
+This makes it difficult without some tool support.
+This brought me back to Jekyll.</p>
+
+<p>Jekyll is a static site generator that comes with some useful features, including rendering blocks of syntax highlighted code.
+You can render blocks of code by using the provided <a href="https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting"><code class="language-plaintext highlighter-rouge">highlight</code></a> Liquid tag.
+For example, here’s a block of CSS that’s applied to paragraphs on this page:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.mod_post</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">text-indent</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<h1 id="tailwind">Tailwind</h1>
+
+<p>I decided I also wanted to learn how to work with Tailwind so I configured it into this project.
+I’m aware that Tailwind shines when you’re able to apply the utility classes to style elements the way you like.
+I do intend to create some more freeform content to get some frontend practice, and Jekyll gives you the freedom and flexibility to use HTML.
+But Jekyll’s appeal is that it supports publishing pages in Markdown, and Tailwind becomes less applicable in this mode <del>as there’s no obvious way to attach utility classes</del>.
+Actually, there are these things called <a href="https://kramdown.gettalong.org/syntax.html#block-ials" class="underline"><em>inline attribute lists</em></a> that let you style block and inline elements on the fly.
+Together with a layout that is properly styled with some base CSS, it feels like publishing a website is very flexible and ergonomic in 2024.</p>
+
+<h1 id="nested-css-support">Nested CSS Support</h1>
+
+<p>One point of confusion for me had to do with nested CSS support.
+At work we used Sass to be able to write CSS like this:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.mod_dialog</span> <span class="p">{</span>
+  <span class="err">h1</span> <span class="err">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">16pt</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>This gets processed into the following:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.mod_dialog</span> <span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16pt</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.mod_dialog</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you can see, the first style has less duplication, so it’s more readable and maintainable.
+At the very least, it saves on typing.
+If it’s not too much trouble, it would be nice to have this feature.
+I was wondering if Tailwind supports this out of the box, and the answer seems to be yes, as long as you configure the bundled <code class="language-plaintext highlighter-rouge">postcss-nested</code> plugin.
+To verify that the plugin works, write some nested CSS and view the output gets processed down into non-nested rules.
+Make sure the CSS is actually used in your HTML, otherwise Tailwind will purge it from the output CSS.</p>
+
+<p>Interestingly enough, even if the processing doesn’t work and the nested CSS gets passed through to the output CSS, a modern browser may still be able to parse it.
+Here is a screenshot of Firefox Dev Tools where the nested CSS is properly interpreted:</p>
+
+<p><img src="/assets/img/2024-09-29-nested-css.png" alt="Cool beans" /></p>
+
+<p>By the way, the <code class="language-plaintext highlighter-rouge">&amp;</code> ampersand is called the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector#browser_compatibility">nesting selector</a>.
+This is based on a recent version of the <a href="https://drafts.csswg.org/css-nesting/#nest-selector">Nesting Module specification</a> that describes the sort of behavior that I’ve come to expect from working with Sass at work.
+In particular, the nesting selectors are optional.
+It was in the older, initial specification that the nesting selector is required when followed by an identifier e.g. <code class="language-plaintext highlighter-rouge">h1</code> or <code class="language-plaintext highlighter-rouge">p</code> - see the explanation at the end of the <a href="https://www.w3.org/TR/css-nesting-1/#nesting">Nesting Style Rules</a>.
+Fortunately, it seems that this strict behavior has been made optional, and we don’t need to worry about it if we use <code class="language-plaintext highlighter-rouge">postcss-nested</code>.</p>
+
+      </div>
+    </div>
+  </body>
+</html>
