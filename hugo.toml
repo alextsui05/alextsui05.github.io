@@ -1,4 +1,21 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Alex Tsui'
+description = 'Read, Write, Repeat'
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
+
+[params.ananke.social.follow]
+networks = [
+  'facebook',
+  'github',
+  'x-twitter'
+]
+
+[params.ananke.social.facebook]
+username = 'tsui.a'
+
+[params.ananke.social.github]
+username = 'alextsui05'
+
+[params.ananke.social.x-twitter]
+username = 'alextsui'
