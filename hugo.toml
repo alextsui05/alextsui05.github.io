@@ -20,3 +20,7 @@ username = 'alextsui05'
 
 [params.ananke.social.x-twitter]
 username = 'alextsui'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
