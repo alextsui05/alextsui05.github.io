@@ -1,7 +1,10 @@
 +++
 date = '2025-07-17T04:52:00Z'
+lastmod = '2025-07-17T16:30:49Z'
 title = 'About'
 featured_image = '/images/20240811_montgomery-hill.jpg'
+[menu.main]
+weight = 1
 +++
 
 I spent a good number of years in school studying computer science, after which
