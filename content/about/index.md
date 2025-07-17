@@ -12,5 +12,3 @@ speakers of that language proofread and comment on it. It played a part in
 improving my written Japanese and allowed me to take on the challenge of moving
 and working in Japan. Currently, I'm back in the Bay Area, in my hometown of
 San Jose, seeking new challenges.
-
-Why is it centered like this?
