@@ -1,6 +1,6 @@
 +++
 date = '2025-02-07T05:26:40Z'
-lastmod = '2025-07-17T16:30:49+0000'
+lastmod = '2025-07-19T16:52:40+0000'
 title = 'Figuring Out Hugo'
 +++
 
@@ -58,4 +58,53 @@ weight = 1
 
 # Adding the last updated date
 
-TODO
+I modified the layout so it shows when a post was last updated underneath when it was first published.
+The last updated is specified in the front matter with the `lastmod` property.
+The default layout doesn't render this info though, so I had to override it in my project.
+The way I did this was check out the [`gohugo-ananke-theme`](https://github.com/theNewDynamic/gohugo-theme-ananke) code, copy `layouts/_default/single.html` over to my project folder, and make edits to it:
+
+{{< highlight go "linenos=inline, hl_lines=2 5-12, style=catppuccin-macchiato" >}}
+  {{ if not .Date.IsZero }}
+  <time class="f6 mt4 dib tracked {{ if not (.Lastmod.After .Date) }}mb4{{ end }}" {{ fmt.Printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+    {{- .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
+  </time>
+    {{ if .Lastmod.After .Date }}
+    <p class="f6">
+    Last updated:
+    <time class="f6 mb4 dib tracked" {{ fmt.Printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+      {{- .Lastmod | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
+    </time>
+    </p>
+    {{ end }}
+  {{end}}
+{{< /highlight >}}
+
+Let's break down line 2:
+
+```
+{{ if not (.Lastmod.After .Date) }}mb4{{ end }}
+```
+
+We are conditionally including the CSS class `mb4`.
+The expression `.Lastmod.After .Date` is checking whether `lastmod` is a time that comes after `date`. See [`Time`](https://gohugo.io/methods/time/after/#article) doc.
+
+
+[`mb4`](https://tachyons.io/docs/layout/spacing/) is a class defined by the Tachyons library that specifies `margin-bottom: 4px`.
+Basically, the logic is if `lastmod` is after `date`, that means the page was updated after it was published, so we remove `margin-bottom` from the published date so we can put it on the updated date below.
+
+```
+  {{ if .Lastmod.After .Date }}
+    <p class="f6">
+    Last updated:
+    <time class="f6 mb4 dib tracked" {{ fmt.Printf `datetime="%s"` (.Lastmod.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+      {{- .Lastmod | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
+    </time>
+    </p>
+    {{ end }}
+  {{end}}
+```
+
+Finally, a note about the layout path.
+It seems like as of Hugo 0.146.0, the template system got an overhaul, and lookup paths got changed.
+For one thing, they got rid of `_default`, so `layouts/_default/single.html` should be `layouts/single.html` instead.
+More details on this [here](https://gohugo.io/templates/new-templatesystem-overview/).

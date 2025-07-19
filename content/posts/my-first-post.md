@@ -3,6 +3,7 @@ date = '2025-02-05T02:01:32Z'
 draft = false
 title = 'Bitwise XOR of All Pairings'
 description = 'Why'
+tags = ['bit manipulation']
 +++
 
 # Problem
