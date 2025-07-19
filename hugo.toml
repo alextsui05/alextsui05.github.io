@@ -2,8 +2,15 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Alex Tsui'
 description = 'Read, Write, Repeat'
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 sectionPagesMenu = 'main'
+
+# https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Installation-as-GoHugo-Module
+[module]
+[[module.imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
 
 [params.ananke.social.follow]
 networks = [

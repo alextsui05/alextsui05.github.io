@@ -4,7 +4,50 @@ lastmod = '2025-07-19T16:52:40+0000'
 title = 'Figuring Out Hugo'
 +++
 
-Here are some notes from setting up the `ananke` theme.
+Here are some notes from setting up a basic Hugo site with the `ananke` theme.
+I followed the official [quickstart guide](https://gohugo.io/getting-started/quick-start/) but had to figure out a few things along that way, which I make a note of below.
+
+# Theme setup as Hugo module
+
+The quickstart has you setting the ananke theme up as a Git submodule, but apparently this is the old way of doing things.
+The new recommended way of installing themes is to set it up as a Hugo module.
+From a high level, you
+
+1. Initialize a new Go module in your Hugo project with `hugo mod init`
+2. Specify the theme you want to use in your hugo config file (e.g. `hugo.toml`)
+3. Run `go mod get -u ./...` to recursively install the theme and any dependency modules
+
+For more details, see [here](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Installation-as-GoHugo-Module) for the module setup instructions for Ananke, or [here](https://gohugo.io/hugo-modules/use-modules/) for general instructions for how to use Hugo modules.
+
+# A note about TOML
+
+I have experience with JSON and YAML but am less familiar with TOML, but after seeing a few equivalent examples, it's not so bad.
+For example, here's the configuration for the ananke theme import:
+
+```toml
+[module]
+[[module.imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
+```
+
+This would be equivalent to the following YAML:
+
+```yaml
+module:
+    imports:
+        - disable: false
+          ignoreConfig: false
+          ignoreImports: false
+          path: github.com/theNewDynamic/gohugo-theme-ananke/v2
+```
+
+In TOML terminology, the names in brackets specify **tables** (of key-value mappings).
+The distinction between single and double brackets is that single brackets assign single values, whereas double brackets indicate an array entry.
+So repeated occurrences of the same double bracketed name will append values to the array named by that name.
+See more examples in the [doc](https://toml.io/en/v1.0.0-rc.2#array-of-tables).
 
 # Menu setup
 
