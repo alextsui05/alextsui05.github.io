@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://atsui.click/'
 languageCode = 'en-us'
 title = 'Alex Tsui'
 description = 'Read, Write, Repeat'
@@ -11,22 +11,6 @@ disable = false
 ignoreConfig = false
 ignoreImports = false
 path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
-
-[params.ananke.social.follow]
-networks = [
-  'facebook',
-  'github',
-  'x-twitter'
-]
-
-[params.ananke.social.facebook]
-username = 'tsui.a'
-
-[params.ananke.social.github]
-username = 'alextsui05'
-
-[params.ananke.social.x-twitter]
-username = 'alextsui'
 
 [caches]
   [caches.images]

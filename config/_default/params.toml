@@ -1,0 +1,18 @@
+[ananke.social.follow]
+networks = [
+  'facebook',
+  'github',
+  'x-twitter'
+]
+
+[ananke.social.facebook]
+username = 'tsui.a'
+
+[ananke.social.github]
+username = 'alextsui05'
+
+[ananke.social.x-twitter]
+username = 'alextsui'
+
+[backstage]
+url = 'https://backstage.atsui.click'
