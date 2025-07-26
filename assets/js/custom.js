@@ -3,7 +3,7 @@
   if (viewCount) {
     let count = '';
     try {
-      const response = await fetch("http://backstage.atsui.click/counters/1");
+      const response = await fetch("https://backstage.atsui.click/counters/1");
       const counter = await response.json();
 
       count = counter.count ?? 0;
