@@ -4,3 +4,4 @@ draft = false
 description = 'Read, Write, Repeat'
 featured_image = '/images/20240811_montgomery-hill.jpg'
 +++
+{{< view_counter >}}
