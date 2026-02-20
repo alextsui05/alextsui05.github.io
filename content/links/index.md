@@ -15,3 +15,8 @@ weight = 1
 - [Infinite Primes](https://atsui.click/primes) - An infinite scrolling list of prime numbers
 - [Pinyin/Jyutping Lookup](https://atsui.click/pinyin-jyutping-lookup/) - A simple app to look up the readings for a snippet of Chinese
 - [React Sketchbook](https://atsui.click/react-sketchbook/) - I'm bad at frontend. The only way to get better is by doing it.
+
+**Files**
+
+- Here's my [resume](https://dl.atsui.click/resume.pdf)
+- Here's my grad school [thesis](https://dl.atsui.click/thesis.pdf)
