@@ -4,7 +4,7 @@ Hugo project for my personal blog
 
 - Git
 - [Hugo 0.165.0](https://github.com/gohugoio/hugo/releases/tag/v0.165.0)
-- Go 1.24
+- Go 1.26
 
 # Quickstart
 
