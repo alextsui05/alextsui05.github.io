@@ -1,5 +1,5 @@
 module github.com/alextsui05/atsui.click
 
-go 1.23.4
+go 1.26
 
-require github.com/theNewDynamic/gohugo-theme-ananke/v2 v2.12.1 // indirect
+require github.com/gohugo-ananke/ananke/v2 v2.19.0 // indirect
